@@ -46,9 +46,3 @@
   margin: auto;
   border-bottom: 1px solid gray;
 }
-.navbar .badge{
-  background: transparent !important;
-  color: blue;
-  font-size: 1rem;
-  padding: 0 10px;
-}
