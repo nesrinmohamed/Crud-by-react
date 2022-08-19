@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react'
 import NavBar from './Components/NavBar'
-// import Home from './Components/Home'
-// import Products from './Components/Products'
+import Cart from './Cart'
 import ShoopingCart from './Components/ShoopingCart'
 import {Routes , Route} from 'react-router-dom'
 import ProductsDetails from './Components/ProductsDetails'
@@ -65,6 +64,7 @@ this.setState({Products})
   let newCart = Products.map(e => e.id ===id)
   this.setState([...cart , newCart])
   }
+  
   render() {
     return (
       <div>
@@ -80,6 +80,7 @@ this.setState({Products})
          resHandel={this.resHandel}
          /> }/>
          <Route path='/productDetails' element={<ProductsDetails/>}/>
+      <Route path='/cart' element={<Cart  cart={this.state.cart} products={this.state.products}/>}  />
        </Routes>
    
       </div>

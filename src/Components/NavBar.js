@@ -2,7 +2,9 @@ import React from 'react'
 import { Badge , Navbar , Container , Nav  } from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 import {FaShoppingCart} from 'react-icons/fa'
+import {useNavigate} from 'react-router-dom'
 function NavBar (props) {
+  const navigate = useNavigate()
   const counter = props.products
   const newCouter = counter.filter(e => {
   if(e.count >0){
@@ -18,7 +20,10 @@ function NavBar (props) {
         <Nav className="ms-auto">
           
           <NavLink to="/" className='p-3'>Products 
-         <Badge style={{marginLeft:"20px"}}> <FaShoppingCart/>{newCouter.length}</Badge>
+        <NavLink to='/cart' >
+        <Badge style={{marginLeft:"20px"}}  >
+          <FaShoppingCart />{newCouter.length}</Badge>
+        </NavLink>
           </NavLink>
         </Nav>
       </Navbar.Collapse>
